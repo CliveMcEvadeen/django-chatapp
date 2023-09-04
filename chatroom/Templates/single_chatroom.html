@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+
+    {% load static %}
+<link rel="stylesheet" href="{% static 'chat-styles.css' %}">
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <h2>Chat Rooms</h2>
+            <ul class="room-list">
+                <li class="active-room">General</li>
+                <li>Private Room 1</li>
+                <li>Group Room A</li>
+            </ul>
+        </div>
+        <div class="chat-main">
+            <div class="chat-header">
+                <h2>General Chat</h2>
+            </div>
+            <div class="chat-messages">
+                <div class="message">User 1: Hello there!</div>
+                <div class="message">User 2: Hi! How are you?</div>
+                <!-- More messages go here -->
+                <div class="response-messages">
+                    <div class="response1">User 1: Am good!</div>
+                    <div class="response1">User 2:How areyou?</div>
+                    <!-- More messages go here -->
+                </div>
+            </div>
+
+            <div class="message-input">
+                <input type="text" placeholder="Type your message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
