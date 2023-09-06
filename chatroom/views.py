@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
-from .models import UserProfile, Conversation, Message, AssistantMessage, GroupChat, GroupMessage
+from .models import UserProfile, Conversation, Message, AssistantMessage, GroupChat, GroupMessage,
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 @login_required
 def group_chat(request, group_id):
@@ -152,3 +153,4 @@ def update_profile(request):
         user_profile.save()
         return redirect('profile_updated')  # Redirect to a profile updated confirmation page
     return render(request, "update_profile.html")
+
