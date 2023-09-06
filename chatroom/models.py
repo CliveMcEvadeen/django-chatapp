@@ -3,25 +3,20 @@ from django.db import models
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # image
-    # contacts={tel:.., location:..}
-    # name
-    # handle
-
-
     # Add additional fields for user profile information
-    # For example: profile_picture, bio, etc.
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
+    bio = models.TextField(blank=True)
+    handle = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.user.username
 
-
 class Conversation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    participants = models.ManyToManyField(User, related_name='conversations')
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Conversation with {self.user.username}"
+        return f"Conversation {self.pk}"
 
 class Message(models.Model):
     conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)
@@ -30,7 +25,7 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.sender.username} in {self.conversation}"
+        return f"Message from {self.sender.username} in Conversation {self.conversation.pk}"
 
 class AssistantMessage(models.Model):
     conversation = models.ForeignKey(Conversation, on_delete=models.CASCADE)
@@ -38,13 +33,12 @@ class AssistantMessage(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Assistant's message in {self.conversation}"
+        return f"Assistant's message in Conversation {self.conversation.pk}"
 
 class GroupChat(models.Model):
     name = models.CharField(max_length=100)
     members = models.ManyToManyField(User, related_name='group_chats')
     created_at = models.DateTimeField(auto_now_add=True)
-    # group_image=image
 
     def __str__(self):
         return self.name
@@ -56,5 +50,4 @@ class GroupMessage(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.sender.username} in {self.group_chat}"
-
+        return f"Message from {self.sender.username} in Group Chat {self.group_chat.name}"
