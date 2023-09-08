@@ -6,5 +6,5 @@ urlpatterns=[
     path('home/', views.home ),
     path('single/', views.single_chatroom ),
     path('group/', views.group_chatroom ),
-    path('delete/', views.deleted_chatroom ),
+    path('delete_room/', views.deleted_chatroom ),
 ]
