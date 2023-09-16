@@ -155,9 +155,10 @@ def update_profile(request):
     return render(request, "update_profile.html")
 
 def home(request):
-    return render(request, "main.html")
+    return render(request, "index.html")
 def group_chat(request):
     return render(request, "group_chat.html")
 
 def single_chat(request):
     return render(request, "single_chat.html")
+
