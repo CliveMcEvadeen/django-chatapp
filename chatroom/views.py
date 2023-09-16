@@ -154,6 +154,7 @@ def update_profile(request):
         return redirect('profile_updated')  # Redirect to a profile updated confirmation page
     return render(request, "update_profile.html")
 
+# @login_required
 def home(request):
     return render(request, "index.html")
 def group_chat(request):
