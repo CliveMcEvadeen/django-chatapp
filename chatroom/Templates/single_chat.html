@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Chat</title>
+    <style>
+        /* Basic styling for the chat page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-grow: 1;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .chat-sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #000000;
+            overflow-y: auto;
+            color: #fff;
+        }
+
+        .chat-main {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Styling for chat bubbles */
+        .chat-bubble {
+            display: flex;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .chat-bubble img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .sender-bubble {
+            align-self: flex-end;
+        }
+
+        .sender-bubble .message {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .receiver-bubble {
+            align-self: flex-start;
+        }
+
+        .receiver-bubble .message {
+            background-color: #c0bebe;
+            color: #333;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Styling for message input */
+        .message-input {
+            align-items: baseline;
+            display: flex;
+            background-color: #fff;
+            border-top: 1px solid #ffffff;
+            padding: 10px 20px;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #000; 
+        }
+
+        input[type="text"],
+        textarea {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 50px;
+            min-width: 100;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .message-input {
+        flex-direction: column;
+        width: auto;
+    }
+        }
+
+    </style>
+</head>
+<body>
+    {% load static %}
+
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <h2>Chat Information</h2>
+            <p>Chat with: John Doe</p>
+            <p>Status: Online</p>
+            <!-- Add more sidebar content here -->
+        </div>
+        <div class="chat-main">
+            <div class="chat-bubble sender-bubble">
+                <div class="message">
+                    Hey, how's it going?
+                </div>
+                <img src="{%static 'sender.jpg'%}" alt="Sender Photo">
+            </div>
+            
+            <div class="chat-bubble receiver-bubble">
+                <img src="{%static 'receiver.jpg'%}" alt="Receiver Photo">
+                <div class="message">
+                    Hi there! I'm doing well, thanks for asking.
+                </div>
+            </div>
+            
+            <!-- Add more chat bubbles here -->
+            
+
+        </div>
+        
+    </div>
+</div>
+
+    <div class="message-input">
+        <input type="text" placeholder="Type your message...">
+        <button>Send</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cht bubble layout sample</title>
+    {% load static %}
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="bubble-container">
+            <img class="bubble-image" src="{%static 'sender.jpg'%}" alt="Sender Photo">
+            <div class="chat-bubble sender-bubble">
+                <div class="bubble-content">
+                    <div>
+                        @clivatone
+                        <hr>
+                    </div> 
+                    Hey, how's it going?
+                </div>
+            </div>
+        </div>
+        
+        <div class="bubble-container">
+            <div class="chat-bubble receiver-bubble">
+                <div class="bubble-content">
+                    <div>
+                        @clivatone
+                        <hr>
+                    </div> 
+                    Hi there! I'm doing well, thanks for asking.
+                </div>
+            </div>
+            <img class="bubble-image" src="{%static 'receiver.jpg'%}" alt="Receiver Photo">
+        </div>
+        <!-- Add more chat bubbles here -->
+    </div>
+</body>
+</html>

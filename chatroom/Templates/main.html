@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App Home</title>
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">Chat App</h1>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Create Group Chat</a>
+            <a href="#">Previous Chats</a>
+            <a href="#">Logout</a>
+            
+            <!-- Add more navigation links here -->
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul class="sidebar-list">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h2>Welcome to Chat App</h2> -->
+            <div class="glass-panel">
+                <h3>Recent Activities</h3>
+                <hr>
+                <!-- Add recent activity items here -->
+            </div>
+            <div class="glass-panel">
+                <h3>Leading Charts</h3>
+                <hr>
+                <!-- Add leading chart items here -->
+            </div>
+            <!-- {% block content %}
+            {%include 'bubles.html'%}
+            {% endblock %} -->
+        </main>
+    </div>
+</body>
+</html>
