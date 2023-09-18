@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
 		<link rel="stylesheet" href="{% static 'sidebar-09/css/style.css' %}">
+
+    <!-- style components of the header section that -->
+
   </head>
   <body>
 		
@@ -19,17 +22,25 @@
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	        </button>
         </div>
-	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  		<!-- <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
 	  			<div class="user-logo">
 	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
 	  				<h3>User Name</h3>
 	  			</div>
+	  		</div> -->
+
+        <div class="img1" style="background-image: url('{% static "bg_1.jpg" %}')">
+	  			<div class="user-logo">
+	  				<div class="img2"></div>
+	  				<h3>User Name</h3>
+	  			</div>
 	  		</div>
+
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
           </li>
-          <li><a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Download</a></li>
+          <li><a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">12</small></span> Download</a></li>
           <li><a href="#"><span class="fa fa-gift mr-3"></span> Leading Chats</a></li>
           <li><a href="#"><span class="fa fa-trophy mr-3"></span> Top Review</a></li>
           <li><a href="#"><span class="fa fa-cog mr-3"></span> Settings</a></li>
