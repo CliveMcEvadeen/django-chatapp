@@ -12,9 +12,36 @@
 		<link rel="stylesheet" href="{% static 'sidebar-09/css/style.css' %}">
 
     <!-- style components of the header section that -->
+    <style>
+      body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            /* background: linear-gradient(to bottom right, #00c6fb, #00ea4e, #e100ff77); */
+            background-image: url('{% static 'images/img2_bg.jpg/' %}');
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: absolute;
+        }
 
+    </style>
   </head>
-  <body>
+  <body style="background-color: blueviolet;">
 		
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
@@ -22,9 +49,9 @@
 					<button type="button" id="sidebarCollapse" class="btn btn-primary">
 	        </button>
         </div>
-        <div class="img bg-wrap text-center py-4" style="background-image: url('{% static 'bg_1.jpg/' %}')">
+        <div class="img bg-wrap text-center py-4" style="background-image: url('{% static 'images/bg_1.jpg/' %}')">
 	  			<div class="user-logo">
-	  				<div class="img" style="background-image: url('{% static 'logo.jpg/' %}')"></div>
+	  				<div class="img" style="background-image: url('{% static 'images/logo.jpg/' %}')"></div>
 	  				<h3>User Name</h3>
 	  			</div>
 	  		</div>
@@ -44,11 +71,17 @@
     	</nav>
 
         <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
+                   
+      <!-- <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">chat app</h2>
         <h1> Chat App</h1>
-      </div>
+      </div> -->
 		</div>
+
+    <div class="container">
+      <h1 class="mb-4">Welcome to Chat App</h1>
+    </div> 
+    
 
     <script src="{% static 'sidebar-09/js/jquery.min.js' %}"></script>
     <script src="{% static 'sidebar-09/js/popper.js' %}"></script>
